@@ -56,29 +56,22 @@ body {
     border-radius: 2rem !important;
     margin-right: 1rem !important;
     margin-bottom: 1.5rem !important;
-
 }
 
+.title-logo{
+  float: left;
+  margin-right: 1.5rem;
+  height: 260px !important;
+  width: 200px !important;
 
-@media (max-width: 479px) {
-    .title-logo {
-        
-        height: 150px !important;
-        width: 150px !important;
-        margin: 3rem auto !important;
-        clear: both !important;
-        justify-content: center !important;
-        align-items: center !important;
-    }
 }
-
-.title-logo {
-    float: left;
-    margin-right: 1.5rem;
-    height: 260px !important;
-    width: 200px !important;
+@media (min-width: 319px) and (max-width:480px) {
+  .title-logo {
+    height: 150px !important;
+    width: 150px !important;
+    clear:  both !important;
+  }
 }
-
 
 .title-header {
     font-family: "Playfair Display", serif;
@@ -96,14 +89,14 @@ body {
     line-height: 2.2rem;
 }
 
-.services-header {
-    font-family: "Playfair Display", serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
+.services-header{
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 .services-card {
