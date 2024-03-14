@@ -101,9 +101,9 @@ body {
 }
 
 .services-card {
-    width: 500px;
-    height: 700px;
-    padding: 2.5rem;
+    width: 500px !important;
+    height: 700px !important;
+    padding: 2rem;
     margin: 1.4rem auto;
     border-radius: 2rem;
     transition: transform 0.5s;
