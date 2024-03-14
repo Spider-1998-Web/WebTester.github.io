@@ -64,12 +64,16 @@ body {
   height: 260px !important;
   width: 200px !important;
 
+  justify-content: center !important;
+    align-items: center!important;
 }
 @media (min-width: 319px) and (max-width:480px) {
   .title-logo {
     height: 150px !important;
     width: 150px !important;
     clear:  both !important;
+    justify-content: center !important;
+    align-items: center!important;
   }
 }
 
