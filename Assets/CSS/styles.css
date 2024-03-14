@@ -63,6 +63,7 @@ body {
     margin-right: 1.5rem;
     height: 260px !important;
     width: 200px !important;
+
     justify-content: center !important;
     align-items: center !important;
 }
@@ -80,7 +81,7 @@ body {
         font-optical-sizing: auto;
         font-weight: 700;
         font-style: normal;
-        font-size: 1.5rem;
+        font-size: 1.5rem !important;
     }
     
 }
