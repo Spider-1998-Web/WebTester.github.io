@@ -65,10 +65,11 @@ body {
   width: 200px !important;
 
 }
-@media (min-width: 319px) and (max-width:480px) {
+@media (min-width: 480px)  {
   .title-logo {
     height: 150px !important;
     width: 150px !important;
+     clear:both;
   }
 }
 
