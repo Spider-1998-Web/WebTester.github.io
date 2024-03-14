@@ -103,7 +103,7 @@ body {
 .services-card {
     width: 450px;
     height: 660px;
-    padding: 2rem;
+    padding: 2.5rem;
     margin: 1.4rem auto;
     border-radius: 2rem;
     transition: transform 0.5s;
