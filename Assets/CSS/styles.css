@@ -1,5 +1,3 @@
-
-
 * {
     margin: 0;
     padding: 0;
@@ -70,7 +68,6 @@ body {
     align-items: center !important;
 }
 
-
 .title-header {
     font-family: "Playfair Display", serif;
     font-optical-sizing: auto;
@@ -87,6 +84,11 @@ body {
     font-size: 1.5rem;
     line-height: 2.2rem;
 }
+.services-container{
+  justify-content: center;
+  align-items: center;
+  margin: auto 15%;
+}
 
 .services-header {
     font-family: "Playfair Display", serif;
@@ -99,11 +101,11 @@ body {
 }
 
 .services-card {
-    width: 400px;
-    height: 600px;
-    padding: 2.5rem;
-    margin: 1.2rem auto;
-    border-radius: 3rem;
+    width: 430px;
+    height: 660px;
+    padding: 2rem;
+    margin: 1.4rem auto;
+    border-radius: 2rem;
     transition: transform 0.5s;
 }
 .services-card:hover {
@@ -140,8 +142,6 @@ body {
     border-radius: 0.75rem;
 }
 
-
-
 @media (min-width: 319px) and (max-width: 480px) {
     .title-logo {
         height: 150px !important;
@@ -166,6 +166,4 @@ body {
         margin-bottom: 1.5rem !important;
         width: 100vw !important;
     }
-    
-    
 }
