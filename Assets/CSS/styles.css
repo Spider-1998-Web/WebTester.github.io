@@ -87,7 +87,7 @@ body {
 .services-container{
   justify-content: center;
   align-items: center;
-  margin: auto 15%;
+  
 }
 
 .services-header {
@@ -101,7 +101,7 @@ body {
 }
 
 .services-card {
-    width: 600px !important;
+    width: 400px !important;
     height: 700px !important;
     padding: 2rem;
     margin: 1.4rem auto;
