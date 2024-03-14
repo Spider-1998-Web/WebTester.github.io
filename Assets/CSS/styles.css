@@ -64,7 +64,7 @@ body {
         
         height: 150px !important;
         width: 150px !important;
-        margin: 3rem 5rem !important;
+        margin: 3rem auto !important;
         clear: both !important;
         justify-content: center !important;
         align-items: center !important;
