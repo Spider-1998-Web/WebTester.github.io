@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #edefeb;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Title Sections */
+
+.navbar {
+    z-index: 1;
+    background-color: #fff;
+    opacity: 90%;
+    padding: 10px 20px;
+    border-radius: 60px;
+}
+
+.navbar-brand {
+    color: #000;
+    font-size: 1.4rem;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    margin: auto 10px !important;
+}
+
+.nav-item {
+    margin: auto 5px !important;
+}
+.nav-link {
+    color: #000;
+    font-family: "Neuton", serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1rem !important;
+    transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.nav-link:hover {
+    box-shadow: inset 100px 0 0 0 #212529;
+    color: white;
+    border-radius: 60px;
+    padding: 5px;
+}
+#title {
+    width: 100%;
+    height: 100%;
+}
+
+.title-image {
+    border-radius: 2rem !important;
+    margin-right: 1rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.title-logo{
+  float: left;
+  margin-right: 1.5rem;
+  height: 260px !important;
+  width: 200px !important;
+
+}
+@media (min-width: 319px) and (max-width:480px) {
+  .title-logo {
+    height: 150px !important;
+    width: 150px !important;
+  }
+}
+
+.title-header {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2rem;
+}
+
+.title-text {
+    font-family: "Neuton", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+}
+
+.services-header{
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.services-card {
+    width: 400px;
+    height: 600px;
+    padding: 2.5rem;
+    margin: 1.2rem auto;
+    border-radius: 3rem;
+    transition: transform 0.5s;
+}
+.services-card:hover {
+    transform: scale(1.1);
+    border: 5px solid black;
+}
+
+.services-cardHeader {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 1.5rem !important;
+}
+
+.services-cardText {
+    font-family: "Neuton", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.3rem;
+    line-height: 2rem;
+}
+
+.brand {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.icon-square {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+}
