@@ -166,6 +166,11 @@ body {
 }
 
 @media (min-width: 319px) and (max-width: 480px) {
+
+    #title, #services, #pricing  {
+        margin-bottom: 15%;
+    }
+    
     .title-logo {
         height: 120px !important;
         width: 120px !important;
