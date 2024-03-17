@@ -108,7 +108,7 @@ body {
     width: 370px !important;
     height: 650px !important;
     padding: 2rem;
-    margin: 1.5rem  !important;
+    margin: 1.5rem auto  !important;
     border-radius: 2rem;
     transition: transform 0.5s;
 }
