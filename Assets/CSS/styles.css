@@ -137,6 +137,7 @@ body {
 .pricing-card{
     border-radius: 2rem !important;
     padding: 30px !important;
+    margin: 1.5rem!important;
 }
 
 .brand {
