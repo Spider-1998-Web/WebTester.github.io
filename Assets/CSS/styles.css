@@ -246,4 +246,13 @@ body {
         pointer-events: none;
         border: none;
     }
+
+    #contact .contact-card {
+        margin: 1rem auto;
+        padding: 3rem;
+        border-radius: 2rem;
+        height: 160px;
+        width: 600px;
+        text-align: center;
+    }
 }
