@@ -15,7 +15,6 @@ body {
 #pricing,
 #contact {
     margin: 5% auto;
-    width: 100%;
 }
 
 .services-header,
@@ -70,7 +69,7 @@ body {
 /* ---------------------- */
 
 /* title Section */
-#title{
+#title {
     width: 100%;
 }
 #title .title-image {
@@ -206,12 +205,10 @@ body {
 @media (min-width: 319px) and (max-width: 480px) {
     #title,
     #services,
-    #pricing, 
-    #contact{
-      margin-left: 15%;
-      margin-right: 15%;
+    #pricing,
+    #contact {
+        
         margin-bottom: 15%;
-     
     }
 
     #title .title-logo {
@@ -244,6 +241,14 @@ body {
         margin-right: 1rem;
         margin-bottom: 1.5rem;
         width: 100vw;
+    }
+    .services-card {
+        width: 400px;
+        height: 600px;
+        padding: 1rem;
+        margin: 1.5rem 12%;
+        border-radius: 2rem;
+        transition: transform 0.5s;
     }
 
     .services-card {
