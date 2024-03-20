@@ -112,6 +112,8 @@ body {
     margin: 1.5rem auto;
     border-radius: 2rem;
     transition: transform 0.5s;
+  
+ 
 }
 .services-card:hover {
     transform: scale(1.1);
@@ -207,8 +209,9 @@ body {
     #services,
     #pricing,
     #contact {
-        
+       
         margin-bottom: 15%;
+        
     }
 
     #title .title-logo {
@@ -242,18 +245,27 @@ body {
         margin-bottom: 1.5rem;
         width: 100vw;
     }
-    .services-card {
-        width: 400px;
+   #services .services-card {
+        width: 320px;
         height: 600px;
-        padding: 1rem;
-        margin: 1.5rem 12%;
+        padding: 1.5rem;
+        margin: 1.5rem 0 1rem 2.5rem;
         border-radius: 2rem;
-        transition: transform 0.5s;
-    }
-
-    .services-card {
         pointer-events: none;
         border: none;
+      
+      
+    }
+
+  
+
+    #pricing .pricing-card {
+        border-radius: 2rem;
+        padding: 2rem;
+        padding: 1.5rem;
+        margin: 1.5rem 0 1rem 3rem;
+        height: 500px;
+        width: 400px;
     }
 
     #contact .contact-card {
