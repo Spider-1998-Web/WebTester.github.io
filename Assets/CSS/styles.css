@@ -2,7 +2,13 @@
 * {
     margin: 0;
     padding: 0;
+    
 }
+html, body{
+    width: 100vw;
+    height: 100vh;
+}
+
 body {
     background-color: #edefeb;
     font-family: "Playfair Display", serif;
@@ -14,6 +20,7 @@ body {
 #services,
 #pricing,
 #contact {
+   max-width: 100%;
     margin: 5% auto;
 }
 
@@ -69,12 +76,11 @@ body {
 /* ---------------------- */
 
 /* title Section */
-#title {
-    width: 100%;
-}
+
 #title .title-image {
     border-radius: 2rem;
     margin-bottom: 1.5rem;
+    min-width: 700px;
 }
 
 #title .title-logo {
@@ -112,8 +118,6 @@ body {
     margin: 1.5rem auto;
     border-radius: 2rem;
     transition: transform 0.5s;
-  
- 
 }
 .services-card:hover {
     transform: scale(1.1);
@@ -209,9 +213,12 @@ body {
     #services,
     #pricing,
     #contact {
-       
+       display: flex;
+       text-align: center;
+       justify-content: center;
+       align-items: center;
+      
         margin-bottom: 15%;
-        
     }
 
     #title .title-logo {
@@ -241,11 +248,11 @@ body {
 
     #title .title-image {
         border-radius: 2rem;
-        margin-right: 1rem;
+
         margin-bottom: 1.5rem;
-        width: 100vw;
+     
     }
-   #services .services-card {
+    #services .services-card {
         width: 320px;
         height: 600px;
         padding: 1.5rem;
@@ -253,11 +260,7 @@ body {
         border-radius: 2rem;
         pointer-events: none;
         border: none;
-      
-      
     }
-
-  
 
     #pricing .pricing-card {
         border-radius: 2rem;
