@@ -206,8 +206,12 @@ body {
 @media (min-width: 319px) and (max-width: 480px) {
     #title,
     #services,
-    #pricing {
+    #pricing, 
+    #contact{
+      margin-left: 15%;
+      margin-right: 15%;
         margin-bottom: 15%;
+     
     }
 
     #title .title-logo {
