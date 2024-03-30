@@ -79,10 +79,9 @@ body {
 #title .title-image {
     border-radius: 2rem;
     margin-bottom: 1.5rem;
-    /* Adjust min-width based on your image dimensions */
     min-width: 470px; /* Keep this value for larger screens */
     max-width: 100%; /* Allow image to scale down on mobile */
-    display: block; /* Ensure it's a block element */
+    display: block; 
     margin-left: auto;
     margin-right: auto;
 }
@@ -116,7 +115,7 @@ body {
 
 /* Services section */
 .services-card {
-    width: 400px;
+    min-width: 400px;
     height: 600px;
     padding: 1rem;
     margin: 1.5rem auto;
@@ -219,28 +218,28 @@ body {
     #contact {
         margin: 0 auto; /* Center horizontally */
         text-align: center; /* Center the content inside the sections */
+        max-width: 100%;
 
         margin-bottom: 15%;
     }
-
 
     #title .title-image {
         border-radius: 2rem;
         margin-bottom: 1.5rem;
         /* Adjust min-width based on your image dimensions */
         min-width: 470px; /* Keep this value for larger screens */
- 
+
         display: block; /* Ensure it's a block element */
         margin-left: auto;
         margin-right: auto;
     }
-    
 
     @media screen and (max-width: 767px) {
         #services,
         #pricing,
         #contact {
             margin: 0 auto; /* Center horizontally */
+            max-width: 100%;
             text-align: center; /* Center the content inside the sections */
         }
 
@@ -277,7 +276,6 @@ body {
         font-size: 0.8rem;
         line-height: 1.5rem;
     }
-
 
     #services .services-card {
         width: 320px;
