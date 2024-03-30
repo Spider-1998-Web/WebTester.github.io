@@ -81,7 +81,7 @@ body {
     margin-bottom: 1.5rem;
     min-width: 470px; /* Keep this value for larger screens */
     max-width: 100%; /* Allow image to scale down on mobile */
-    display: block; 
+    display: block;
     margin-left: auto;
     margin-right: auto;
 }
@@ -115,7 +115,8 @@ body {
 
 /* Services section */
 .services-card {
-    min-width: 400px;
+    width: 400px;
+
     height: 600px;
     padding: 1rem;
     margin: 1.5rem auto;
@@ -278,8 +279,6 @@ body {
     }
 
     #services .services-card {
-        width: 320px;
-        height: 600px;
         padding: 1.5rem;
         margin: 1.5rem 0 1rem 2.5rem;
         border-radius: 2rem;
@@ -288,12 +287,9 @@ body {
     }
 
     #pricing .pricing-card {
-        border-radius: 2rem;
         padding: 2rem;
         padding: 1.5rem;
         margin: 1.5rem 0 1rem 3rem;
-        height: 500px;
-        width: 400px;
     }
 
     #contact .contact-card {
