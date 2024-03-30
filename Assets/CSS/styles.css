@@ -15,13 +15,19 @@ body {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+ 
+    min-width: 100vw; 
+    min-height: 100vh; 
+
 }
+
 
 #services,
 #pricing,
 #contact {
     max-width: 100%;
     margin: 0 auto;
+    display: block;
 }
 
 .services-header,
@@ -115,8 +121,7 @@ body {
 
 /* Services section */
 .services-card {
-    width: 400px;
-    
+    width: 400px; 
     height: 600px;
     padding: 1rem;
     margin: 1.5rem auto;
