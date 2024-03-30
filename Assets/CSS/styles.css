@@ -221,13 +221,21 @@ body {
         margin-bottom: 15%;
     }
 
-    /* Add responsive styles using media queries */
     @media screen and (max-width: 767px) {
-        /* Example: Adjust styles for smaller screens */
-        .navbar {
-            padding: 10px; /* Reduce padding for smaller screens */
+        #services,
+        #pricing,
+        #contact {
+            margin: 0 auto; /* Center horizontally */
+            text-align: center; /* Center the content inside the sections */
         }
-        /* Add more responsive adjustments as needed */
+
+        #services .services-card{
+            text-align: left;
+        }
+
+        .navbar {
+            padding: 10px;
+        }
     }
 
     #title .title-logo {
@@ -257,7 +265,6 @@ body {
 
     #title .title-image {
         border-radius: 2rem;
-
         margin-bottom: 1.5rem;
     }
     #services .services-card {
