@@ -21,7 +21,7 @@ body {
 #pricing,
 #contact {
     max-width: 100%;
-    margin: 5% auto;
+    margin: 0 auto;
 }
 
 .services-header,
@@ -80,7 +80,8 @@ body {
     border-radius: 2rem;
     margin-bottom: 1.5rem;
     /* Adjust min-width based on your image dimensions */
-    min-width: 700px;
+    min-width: 470px; /* Keep this value for larger screens */
+    max-width: 100%; /* Allow image to scale down on mobile */
 }
 
 #title .title-logo {
@@ -213,10 +214,8 @@ body {
     #services,
     #pricing,
     #contact {
-        display: flex;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
+        margin: 0 auto; /* Center horizontally */
+        text-align: center; /* Center the content inside the sections */
 
         margin-bottom: 15%;
     }
@@ -229,7 +228,7 @@ body {
             text-align: center; /* Center the content inside the sections */
         }
 
-        #services .services-card{
+        #services .services-card {
             text-align: left;
         }
 
