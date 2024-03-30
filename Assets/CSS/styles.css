@@ -82,6 +82,9 @@ body {
     /* Adjust min-width based on your image dimensions */
     min-width: 470px; /* Keep this value for larger screens */
     max-width: 100%; /* Allow image to scale down on mobile */
+    display: block; /* Ensure it's a block element */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #title .title-logo {
@@ -220,6 +223,19 @@ body {
         margin-bottom: 15%;
     }
 
+
+    #title .title-image {
+        border-radius: 2rem;
+        margin-bottom: 1.5rem;
+        /* Adjust min-width based on your image dimensions */
+        min-width: 470px; /* Keep this value for larger screens */
+        max-width: 90%; /* Allow image to scale down on mobile */
+        display: block; /* Ensure it's a block element */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+
     @media screen and (max-width: 767px) {
         #services,
         #pricing,
@@ -262,10 +278,7 @@ body {
         line-height: 1.5rem;
     }
 
-    #title .title-image {
-        border-radius: 2rem;
-        margin-bottom: 1.5rem;
-    }
+
     #services .services-card {
         width: 320px;
         height: 600px;
