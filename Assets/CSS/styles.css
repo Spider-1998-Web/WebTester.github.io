@@ -203,8 +203,9 @@ body {
 /* ---------------------- */
 /* Footer Section */
 #footer {
+background-color: #fff;
 
-    padding: 0.75rem;
+width: 100%;
   
 
 }
