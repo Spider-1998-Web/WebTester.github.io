@@ -9,7 +9,7 @@ body {
     height: 100%;
     margin: 0px;
     padding: 0px;
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
 
 body {
@@ -18,16 +18,11 @@ body {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    
-
-
 }
-
 
 #services,
 #pricing,
-#contact
-{
+#contact {
     max-width: 100%;
     margin: 3rem auto;
     display: block;
@@ -88,10 +83,9 @@ body {
 #title .title-image {
     border-radius: 2rem;
     margin-bottom: 1.5rem;
-    min-width: 465px; 
-    max-width: 100%; 
-    display: block; 
-
+    min-width: 465px;
+    max-width: 100%;
+    display: block;
 }
 
 #title .title-logo {
@@ -123,7 +117,7 @@ body {
 
 /* Services section */
 .services-card {
-    width: 400px; 
+    width: 400px;
     height: 600px;
     padding: 1rem;
     margin: 1.5rem auto;
@@ -201,14 +195,11 @@ body {
     font-size: 1.2rem;
 }
 
-
 /* ---------------------- */
 /* Footer Section */
 #footer {
-
+    width: 100%;
     padding: 0.75rem;
-  
-
 }
 /* ---------------------- */
 
@@ -250,9 +241,9 @@ body {
         #services,
         #pricing,
         #contact {
-            margin: 0 auto; 
+            margin: 0 auto;
             max-width: 100%;
-            text-align: center; 
+            text-align: center;
         }
 
         #services .services-card {
@@ -290,7 +281,7 @@ body {
     }
 
     #services .services-card {
-     text-align: center;
+        text-align: center;
         padding: 0.75rem;
         margin: 1rem auto;
         border-radius: 2rem;
@@ -301,15 +292,12 @@ body {
         font-size: 1rem;
         line-height: 2rem;
         text-align: center;
-      
     }
 
     #pricing .pricing-card {
-
         padding: 2rem;
         padding: 1.5rem;
         margin: 1rem auto;
-   
     }
 
     #contact .contact-card {
