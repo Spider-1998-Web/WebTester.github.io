@@ -84,7 +84,7 @@ body {
 #title .title-image {
     border-radius: 2rem;
     margin-bottom: 1.5rem;
-    min-width: 465px;
+    
     max-width: 100%;
     display: block;
 }
