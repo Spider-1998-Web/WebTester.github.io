@@ -20,9 +20,11 @@ body {
     font-style: normal;
 }
 
+
 #services,
 #pricing,
-#contact {
+#contact,
+footer {
     max-width: 100%;
     margin: 3rem auto;
     display: block;
