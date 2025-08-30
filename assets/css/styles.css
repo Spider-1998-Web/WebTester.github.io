@@ -1,3 +1,6 @@
+/* ============================= */
+/* 1. Root Variables             */
+/* ============================= */
 :root {
   --primary: #1a202c;
   --primary-light: #2d3748;
@@ -11,7 +14,9 @@
   --transition: all 0.3s ease;
 }
 
-/* Base Styles */
+/* ============================= */
+/* 2. Universal / Base Styles    */
+/* ============================= */
 * {
   margin: 0;
   padding: 0;
@@ -93,7 +98,9 @@ a {
   background: var(--accent);
 }
 
-/* Header Styles */
+/* ============================= */
+/* 3. Header / Navigation        */
+/* ============================= */
 header {
   position: fixed;
   top: 0;
@@ -171,17 +178,15 @@ header.scrolled {
   border-radius: 2px;
 }
 
-/* Hero Section */
+/* ============================= */
+/* 4. Hero Section               */
+/* ============================= */
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(
-    135deg,
-    var(--primary) 0%,
-    var(--primary-light) 100%
-  );
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
   color: var(--white);
   text-align: center;
   padding: 5rem 1.5rem;
@@ -224,7 +229,9 @@ header.scrolled {
   flex-wrap: wrap;
 }
 
-/* Services Section */
+/* ============================= */
+/* 5. Services Section           */
+/* ============================= */
 .services {
   background: var(--secondary);
 }
@@ -260,7 +267,9 @@ header.scrolled {
   margin-bottom: 1rem;
 }
 
-/* Portfolio Section */
+/* ============================= */
+/* 6. Portfolio Section          */
+/* ============================= */
 .portfolio-filter {
   display: flex;
   justify-content: center;
@@ -354,7 +363,9 @@ header.scrolled {
   font-weight: 500;
 }
 
-/* About Section */
+/* ============================= */
+/* 7. About Section              */
+/* ============================= */
 .about {
   background: var(--secondary);
 }
@@ -379,11 +390,17 @@ header.scrolled {
 }
 
 .about-content p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   color: var(--text-light);
 }
 
-/* Contact Section */
+.about-content .btn {
+  margin-top: 1rem;
+}
+
+/* ============================= */
+/* 8. Contact Section            */
+/* ============================= */
 .contact-form {
   max-width: 600px;
   margin: 0 auto;
@@ -413,7 +430,9 @@ textarea.form-input {
   resize: vertical;
 }
 
-/* Footer */
+/* ============================= */
+/* 9. Footer                     */
+/* ============================= */
 footer {
   background: var(--primary);
   color: var(--white);
@@ -453,7 +472,9 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Lightbox */
+/* ============================= */
+/* 10. Lightbox                  */
+/* ============================= */
 .lightbox {
   position: fixed;
   top: 0;
@@ -478,39 +499,38 @@ footer {
 .lightbox-content {
   max-width: 90vw;
   max-height: 90vh;
-  position: relative;
 }
 
 .lightbox-close {
   position: absolute;
   top: -40px;
   right: 0;
-  color: var(--white);
   font-size: 2rem;
   background: none;
   border: none;
+  color: var(--white);
   cursor: pointer;
 }
 
-.lightbox-video {
-  width: 100%;
-  max-height: 90vh;}
-
+.lightbox-video,
 .lightbox-image {
-  max-width: 100%;
+  width: 100%;
   max-height: 90vh;
 }
 
-/* Loading Animation */
+/* ============================= */
+/* 11. Loader                     */
+/* ============================= */
 .loader {
-  display: inline-block;
+  display: block;
   width: 80px;
   height: 80px;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 9999;
+  z-index: 3000;
+  pointer-events: none;
 }
 
 .loader:after {
@@ -534,7 +554,9 @@ footer {
   }
 }
 
-/* Back to Top Button */
+/* ============================= */
+/* 12. Back to Top               */
+/* ============================= */
 .back-to-top {
   position: fixed;
   bottom: 2rem;
@@ -551,8 +573,7 @@ footer {
   opacity: 0;
   visibility: hidden;
   transition: var(--transition);
-  z-index: 99;
-  box-shadow: var(--shadow);
+  z-index: 999;
 }
 
 .back-to-top.visible {
@@ -560,12 +581,10 @@ footer {
   visibility: visible;
 }
 
-/* Responsive Styles */
+/* ============================= */
+/* 13. Responsive                 */
+/* ============================= */
 @media (max-width: 992px) {
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
   .nav-menu {
     position: fixed;
     top: 72px;
@@ -578,6 +597,7 @@ footer {
     align-items: center;
     transition: var(--transition);
     gap: 2.5rem;
+    z-index: 1000;
   }
 
   .nav-menu.active {
@@ -588,24 +608,28 @@ footer {
     display: flex;
   }
 
-  .mobile-toggle.active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
+  .hero-title {
+    font-size: 2.5rem;
   }
 
-  .mobile-toggle.active span:nth-child(2) {
-    opacity: 0;
+  .about-grid {
+    gap: 2rem;
   }
 
-  .mobile-toggle.active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
+  .about-content {
+    padding: 1rem;
+  }
+
+  .about-content p {
+    margin-bottom: 1.5rem;
+  }
+
+  .about-content .btn {
+    margin-top: 1.5rem;
   }
 }
 
 @media (max-width: 768px) {
-  .section-title {
-    font-size: 2rem;
-  }
-
   .hero-title {
     font-size: 2rem;
   }
@@ -622,6 +646,10 @@ footer {
     flex-direction: column;
     align-items: center;
   }
+
+  .section-title {
+    font-size: 2rem;
+  }
 }
 
 @media (max-width: 576px) {
@@ -633,5 +661,14 @@ footer {
   .filter-btn {
     width: 100%;
     text-align: center;
+  }
+
+  .about-grid {
+    text-align: center;
+  }
+
+  .about-content .btn {
+    margin-left: auto;
+    margin-right: auto;
   }
 }

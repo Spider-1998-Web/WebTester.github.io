@@ -1,16 +1,17 @@
-// Initialize AOS
-AOS.init({
-  duration: 800,
-  once: true,
-  offset: 100,
-});
-
-// DOM Ready
 document.addEventListener("DOMContentLoaded", function () {
-  // Hide loader when page is fully loaded
+  const loader = document.getElementById("loader");
+
+  // Hide loader & initialize AOS
   window.addEventListener("load", function () {
-    const loader = document.getElementById("loader");
     if (loader) loader.style.display = "none";
+
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100,
+    });
+
+    AOS.refresh();
   });
 
   // Mobile Menu Toggle
@@ -25,8 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Close mobile menu when clicking a nav link
-  const navLinks = document.querySelectorAll(".nav-link");
-  navLinks.forEach((link) => {
+  document.querySelectorAll(".nav-link").forEach((link) => {
     link.addEventListener("click", () => {
       if (mobileToggle) mobileToggle.classList.remove("active");
       if (navMenu) navMenu.classList.remove("active");
@@ -52,13 +52,18 @@ document.addEventListener("DOMContentLoaded", function () {
         this.classList.add("active");
 
         const filterValue = this.getAttribute("data-filter");
+
         portfolioItems.forEach((item) => {
           if (filterValue === "all" || item.dataset.category === filterValue) {
             item.style.display = "block";
+            item.classList.add("fade-in");
           } else {
             item.style.display = "none";
+            item.classList.remove("fade-in");
           }
         });
+
+        AOS.refresh();
       });
     });
   }
@@ -95,7 +100,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Close lightbox
   function closeLightbox() {
     if (lightbox) lightbox.classList.remove("active");
     document.body.style.overflow = "auto";
@@ -104,9 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (video) video.pause();
   }
 
-  if (lightboxClose) {
-    lightboxClose.addEventListener("click", closeLightbox);
-  }
+  if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
   if (lightbox) {
     lightbox.addEventListener("click", (e) => {
       if (e.target === lightbox) closeLightbox();
