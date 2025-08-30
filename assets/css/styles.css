@@ -168,9 +168,20 @@ header.scrolled {
   width: 100%;
   height: 3px;
   background: var(--primary);
-  margin: 2px 0;
+  margin: 4px 0;
   border-radius: 2px;
   transition: var(--transition);
+}
+
+/* Hamburger to X Animation */
+.mobile-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.mobile-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.mobile-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
 }
 
 /* =====================
@@ -199,7 +210,6 @@ header.scrolled {
   left: 0;
   width: 100%;
   height: 100%;
-  
   opacity: 0.1;
 }
 .hero-content {
