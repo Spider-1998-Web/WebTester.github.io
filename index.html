@@ -1,226 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spotlight Ads</title>
+  <title>Spotlight Ads | Creative Design Solutions</title>
+  <meta name="description"
+    content="Professional advertising designs including banners, posters, certificates, and animated invitations">
   <link rel="icon" type="image/x-icon" href="assets/images/logo.jpg">
-  <link href="assets/css/styles.css" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="assets/css/styles.css" rel="stylesheet">
 </head>
-<body class="bg-white text-gray-900">
 
-<header class="fixed w-full bg-white shadow z-50">
-  <nav class="container mx-auto flex justify-between items-center p-4">
-    <!-- Logo -->
-    <h1 class="text-2xl font-bold">Spotlight Ads</h1>
+<body>
+  <!-- Loading Animation -->
+  <div class="loader" id="loader"></div>
 
-    <!-- Desktop Menu -->
-    <ul class="hidden md:flex gap-6 font-medium">
-      <li><a href="#home" class="hover:text-gray-500">Home</a></li>
-      <li><a href="#services" class="hover:text-gray-500">Services</a></li>
-      <li><a href="#portfolio" class="hover:text-gray-500">Portfolio</a></li>
-      <li><a href="#about" class="hover:text-gray-500">About</a></li>
-      <li><a href="#contact" class="hover:text-gray-500">Contact</a></li>
-    </ul>
+  <!-- Header -->
+  <header id="header">
+    <div class="container nav-container">
+      <a href="#" class="logo">Spotlight Ads</a>
 
-    <!-- Mobile Hamburger -->
-    <button
-      id="menu-btn"
-      class="md:hidden p-2 rounded-lg hover:bg-gray-100 focus:outline-none"
-    >
-      <!-- Hamburger Icon -->
-      <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg"
-        class="h-8 w-8 block" fill="none" viewBox="0 0 24 24"
-        stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
 
-      <!-- Close Icon (hidden by default) -->
-      <svg id="close-icon" xmlns="http://www.w3.org/2000/svg"
-        class="h-8 w-8 hidden" fill="none" viewBox="0 0 24 24"
-        stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M6 18L18 6M6 6l12 12" />
-      </svg>
-    </button>
-  </nav>
+        <div class="mobile-toggle" id="mobile-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </div>
+  </header>
 
-  <!-- Mobile Menu -->
-  <div id="menu"
-    class="overflow-hidden max-h-0 transition-all duration-500 ease-in-out md:hidden bg-white shadow-lg">
-    <ul class="flex flex-col items-center gap-4 py-6 font-medium">
-      <li><a href="#home" class="hover:text-gray-500">Home</a></li>
-      <li><a href="#services" class="hover:text-gray-500">Services</a></li>
-      <li><a href="#portfolio" class="hover:text-gray-500">Portfolio</a></li>
-      <li><a href="#about" class="hover:text-gray-500">About</a></li>
-      <li><a href="#contact" class="hover:text-gray-500">Contact</a></li>
-    </ul>
-  </div>
-</header>
-
-  <!-- Hero -->
-  <section id="home" class="h-screen flex flex-col items-center justify-center text-center bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white pt-20">
-    <h1 class="text-5xl font-bold mb-4" data-aos="fade-down">Spotlight Ads</h1>
-    <p class="text-xl mb-6" data-aos="fade-up">We create impactful advertisements, banners, posters, certificates, animated invitations, and more.</p>
-    <a href="#portfolio" class="px-6 py-3 bg-white text-gray-900 rounded-xl font-semibold hover:bg-gray-200 transition" data-aos="zoom-in">View Our Work</a>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content" data-aos="fade-up">
+      <h1 class="hero-title">Creative Designs That Captivate</h1>
+      <p class="hero-subtitle">We create impactful advertisements, banners, posters, certificates, animated invitations,
+        and more.</p>
+      <div class="hero-buttons">
+        <a href="#portfolio" class="btn" data-aos="fade-up" data-aos-delay="200">View Our Work</a>
+        <a href="#contact" class="btn btn-secondary" data-aos="fade-up" data-aos-delay="300">Get In Touch</a>
+      </div>
+    </div>
   </section>
 
-  <!-- Services -->
-  <section id="services" class="py-20 bg-gray-50">
-    <div class="container mx-auto max-w-7xl px-4 text-center">
-      <h2 class="text-3xl font-bold mb-12" data-aos="fade-up">Our Services</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-        <div class="p-6 bg-white rounded-xl shadow-lg" data-aos="zoom-in">
-          <h3 class="font-bold text-xl mb-2">Banners</h3>
-          <p>Custom designed banners for any purpose, digital or print.</p>
+  <!-- Services Section -->
+  <section id="services" class="section services">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Our Services</h2>
+
+      <div class="services-grid">
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-icon">🖼️</div>
+          <h3 class="service-title">Banners</h3>
+          <p>Custom designed banners for any purpose, digital or print. Perfect for events, promotions, and branding.
+          </p>
         </div>
-        <div class="p-6 bg-white rounded-xl shadow-lg" data-aos="zoom-in" data-aos-delay="100">
-          <h3 class="font-bold text-xl mb-2">Posters</h3>
-          <p>Creative poster designs to showcase your brand or event.</p>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-icon">📰</div>
+          <h3 class="service-title">Posters</h3>
+          <p>Creative poster designs to showcase your brand or event. Eye-catching and effective communication.</p>
         </div>
-        <div class="p-6 bg-white rounded-xl shadow-lg" data-aos="zoom-in" data-aos-delay="200">
-          <h3 class="font-bold text-xl mb-2">Certificates</h3>
-          <p>Professional certificates for events, workshops, and courses.</p>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-icon">🏆</div>
+          <h3 class="service-title">Certificates</h3>
+          <p>Professional certificates for events, workshops, and courses. Elegant designs that recognize achievement.
+          </p>
         </div>
-        <div class="p-6 bg-white rounded-xl shadow-lg" data-aos="zoom-in" data-aos-delay="300">
-          <h3 class="font-bold text-xl mb-2">Video & Invitations</h3>
-          <p>Animated invites and promotional videos to engage your audience.</p>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="service-icon">🎬</div>
+          <h3 class="service-title">Video & Invitations</h3>
+          <p>Animated invites and promotional videos to engage your audience. Memorable and shareable content.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Portfolio -->
-  <section id="portfolio" class="py-20">
-    <div class="container mx-auto px-4 max-w-7xl">
-      <h2 class="text-3xl font-bold mb-12 text-center" data-aos="fade-up">Our Work</h2>
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Our Portfolio</h2>
 
-      <!-- Banners -->
-      <h3 class="text-2xl font-bold mb-12" data-aos="fade-right">Banners</h3>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        <div class="relative group overflow-hidden rounded-xl shadow-lg cursor-pointer" data-aos="zoom-in" onclick="openLightbox('assets/images/banners/banner-4.jpg', 'image')">
-          <img loading="lazy" src="assets/images/banners/banner-4.jpg" alt="Banner 1" class="w-full h-[24rem] object-cover transition-transform duration-500 group-hover:scale-110">
-        </div>
-        <div class="relative group overflow-hidden rounded-xl shadow-lg cursor-pointer" data-aos="zoom-in" onclick="openLightbox('assets/images/banners/banner-5.jpg', 'image')">
-          <img loading="lazy" src="assets/images/banners/banner-5.jpg" alt="Banner 2" class="w-full h-[24rem] object-cover transition-transform duration-500 group-hover:scale-110">
-        </div>
-        <div class="relative group overflow-hidden rounded-xl shadow-lg cursor-pointer" data-aos="zoom-in" onclick="openLightbox('assets/images/banners/banner-6.jpg', 'image')">
-          <img loading="lazy" src="assets/images/banners/banner-6.jpg" alt="Banner 3" class="w-full h-[24rem] object-cover transition-transform duration-500 group-hover:scale-110">
-        </div>
+      <div class="portfolio-filter" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="all">All Work</button>
+        <button class="filter-btn" data-filter="banners">Banners</button>
+        <button class="filter-btn" data-filter="posters">Posters</button>
+        <button class="filter-btn" data-filter="certificates">Certificates</button>
+        <button class="filter-btn" data-filter="invitations">Invitations</button>
+        <button class="filter-btn" data-filter="promotions">Promotions</button>
       </div>
 
-      <!-- Posters -->
-      <h3 class="text-right  text-2xl font-bold mb-12 mt-12 " data-aos="fade-right">Posters</h3>
+      <div class="portfolio-grid">
+        <!-- Banners -->
+        <div class="portfolio-item" data-category="banners" data-aos="fade-up">
+          <img src="assets/images/banners/banner-4.jpg" alt="Creative Banner Design" class="portfolio-img">
+          <div class="portfolio-overlay">
+            <h3 class="portfolio-title">Event Banner</h3>
+            <p class="portfolio-desc">Modern design for a tech conference</p>
+          </div>
+        </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        <div class="relative group overflow-hidden rounded-xl shadow-lg cursor-pointer" data-aos="zoom-in" onclick="openLightbox('assets/images/posters/poster-1.jpg', 'image')">
-          <img loading="lazy" src="assets/images/posters/poster-1.jpg" alt="Poster 1" class="w-full h-[24rem] object-cover transition-transform duration-500 group-hover:scale-110">
+        <div class="portfolio-item" data-category="banners" data-aos="fade-up" data-aos-delay="100">
+          <img src="assets/images/banners/banner-5.jpg" alt="Promotional Banner" class="portfolio-img">
+          <div class="portfolio-overlay">
+            <h3 class="portfolio-title">Promotional Banner</h3>
+            <p class="portfolio-desc">Product launch campaign</p>
+          </div>
         </div>
-        <div class="relative group overflow-hidden rounded-xl shadow-lg cursor-pointer" data-aos="zoom-in" onclick="openLightbox('assets/images/posters/poster-2.jpg', 'image')">
-          <img loading="lazy" src="assets/images/posters/poster-2.jpg" alt="Poster 2" class="w-full h-[24rem] object-cover transition-transform duration-500 group-hover:scale-110">
+
+        <div class="portfolio-item" data-category="banners" data-aos="fade-up" data-aos-delay="200">
+          <img src="assets/images/banners/banner-6.jpg" alt="Corporate Banner" class="portfolio-img">
+          <div class="portfolio-overlay">
+            <h3 class="portfolio-title">Corporate Banner</h3>
+            <p class="portfolio-desc">Brand awareness campaign</p>
+          </div>
         </div>
-        <div class="relative group overflow-hidden rounded-xl shadow-lg cursor-pointer" data-aos="zoom-in" onclick="openLightbox('assets/images/posters/poster-3.jpg', 'image')">
-          <img loading="lazy" src="assets/images/posters/poster-3.jpg" alt="Poster 3" class="w-full h-[24rem] object-cover transition-transform duration-500 group-hover:scale-110">
+
+        <!-- Posters -->
+        <div class="portfolio-item" data-category="posters" data-aos="fade-up" data-aos-delay="100">
+          <img src="assets/images/posters/poster-1.jpg" alt="Music Event Poster" class="portfolio-img">
+          <div class="portfolio-overlay">
+            <h3 class="portfolio-title">Music Event</h3>
+            <p class="portfolio-desc">Vibrant design for a festival</p>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="posters" data-aos="fade-up" data-aos-delay="200">
+          <img src="assets/images/posters/poster-2.jpg" alt="Art Exhibition Poster" class="portfolio-img">
+          <div class="portfolio-overlay">
+            <h3 class="portfolio-title">Art Exhibition</h3>
+            <p class="portfolio-desc">Elegant design for a gallery show</p>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="posters" data-aos="fade-up" data-aos-delay="300">
+          <img src="assets/images/posters/poster-3.jpg" alt="Theater Poster" class="portfolio-img">
+          <div class="portfolio-overlay">
+            <h3 class="portfolio-title">Theater Production</h3>
+            <p class="portfolio-desc">Dramatic design for a play</p>
+          </div>
+        </div>
+
+        <!-- Certificates -->
+        <div class="portfolio-item" data-category="certificates" data-aos="fade-up" data-aos-delay="100">
+          <img src="assets/images/certificates/certificate-1.jpg" alt="Achievement Certificate" class="portfolio-img">
+          <div class="portfolio-overlay">
+            <h3 class="portfolio-title">Achievement Award</h3>
+            <p class="portfolio-desc">Elegant certificate design</p>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="certificates" data-aos="fade-up" data-aos-delay="200">
+          <img src="assets/images/certificates/certificate-2.jpg" alt="Completion Certificate" class="portfolio-img">
+          <div class="portfolio-overlay">
+            <h3 class="portfolio-title">Course Completion</h3>
+            <p class="portfolio-desc">Professional certification</p>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="certificates" data-aos="fade-up" data-aos-delay="300">
+          <img src="assets/images/certificates/certificate-3.jpg" alt="Recognition Certificate" class="portfolio-img">
+          <div class="portfolio-overlay">
+            <h3 class="portfolio-title">Recognition Award</h3>
+            <p class="portfolio-desc">Formal recognition design</p>
+          </div>
+        </div>
+
+        <!-- Animated Invitations -->
+        <div class="portfolio-item" data-category="invitations" data-aos="fade-up" data-aos-delay="100"
+          data-video-src="assets/videos/invitations/invite-1.mp4">
+          <img src="assets/videos/thumbnails/invite-1.png" alt="Animated Invitation" class="portfolio-img">
+          <div class="portfolio-overlay">
+            <h3 class="portfolio-title">Wedding Invitation</h3>
+            <p class="portfolio-desc">Elegant animated sequence</p>
+          </div>
+          <span class="video-indicator">Video</span>
+        </div>
+
+        <div class="portfolio-item" data-category="invitations" data-aos="fade-up" data-aos-delay="200"
+          data-video-src="assets/videos/invitations/invite-2.mp4">
+          <img src="assets/videos/thumbnails/invite-2.png" alt="Birthday Invitation" class="portfolio-img">
+          <div class="portfolio-overlay">
+            <h3 class="portfolio-title">Birthday Invitation</h3>
+            <p class="portfolio-desc">Fun and festive animation</p>
+          </div>
+          <span class="video-indicator">Video</span>
+        </div>
+
+        <!-- Brand Promotions -->
+        <div class="portfolio-item" data-category="promotions" data-aos="fade-up"
+          data-video-src="assets/videos/promotions/brand-1.mp4">
+          <img src="assets/videos/thumbnails/brand-1.png" alt="Brand Promotion Video" class="portfolio-img">
+          <div class="portfolio-overlay">
+            <h3 class="portfolio-title">Product Launch</h3>
+            <p class="portfolio-desc">Exciting reveal campaign</p>
+          </div>
+          <span class="video-indicator">Video</span>
+        </div>
+
+        <div class="portfolio-item" data-category="promotions" data-aos="fade-up"
+          data-video-src="assets/videos/promotions/brand-2.mp4">
+          <img src="assets/videos/thumbnails/brand-2.png" alt="Brand Story Video" class="portfolio-img">
+          <div class="portfolio-overlay">
+            <h3 class="portfolio-title">Brand Story</h3>
+            <p class="portfolio-desc">Company journey narrative</p>
+          </div>
+          <span class="video-indicator">Video</span>
+        </div>
+
+        <div class="portfolio-item" data-category="promotions" data-aos="fade-up"
+          data-video-src="assets/videos/promotions/brand-3.mp4">
+          <img src="assets/videos/thumbnails/brand-3.png" alt="Service Promotion" class="portfolio-img">
+          <div class="portfolio-overlay">
+            <h3 class="portfolio-title">Service Promotion</h3>
+            <p class="portfolio-desc">Highlighting key features</p>
+          </div>
+          <span class="video-indicator">Video</span>
+        </div>
+
+        <div class="portfolio-item" data-category="promotions" data-aos="fade-up"
+          data-video-src="assets/videos/promotions/brand-4.mp4">
+          <img src="assets/videos/thumbnails/brand-4.png" alt="Brand Awareness" class="portfolio-img">
+          <div class="portfolio-overlay">
+            <h3 class="portfolio-title">Brand Awareness</h3>
+            <p class="portfolio-desc">Building recognition campaign</p>
+          </div>
+          <span class="video-indicator">Video</span>
         </div>
       </div>
-
-      <!-- Certificates -->
-      <h3 class="text-2xl font-bold mb-12 mt-12" data-aos="fade-right">Certificates</h3>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        <div class="relative group overflow-hidden rounded-xl shadow-lg cursor-pointer" data-aos="zoom-in" onclick="openLightbox('assets/images/certificates/certificate-1.jpg', 'image')">
-          <img loading="lazy" src="assets/images/certificates/certificate-1.jpg" alt="Certificate 1" class="w-full h-[24rem] object-cover transition-transform duration-500 group-hover:scale-110">
-        </div>
-        <div class="relative group overflow-hidden rounded-xl shadow-lg cursor-pointer" data-aos="zoom-in" onclick="openLightbox('assets/images/certificates/certificate-2.jpg', 'image')">
-          <img loading="lazy" src="assets/images/certificates/certificate-2.jpg" alt="Certificate 2" class="w-full h-[24rem] object-cover transition-transform duration-500 group-hover:scale-110">
-        </div>
-        <div class="relative group overflow-hidden rounded-xl shadow-lg cursor-pointer" data-aos="zoom-in" onclick="openLightbox('assets/images/certificates/certificate-3.jpg', 'image')">
-          <img loading="lazy" src="assets/images/certificates/certificate-3.jpg" alt="Certificate 3" class="w-full h-[24rem] object-cover transition-transform duration-500 group-hover:scale-110">
-        </div>
-      </div>
-
-      <!-- Animated Invitations -->
-      <h3 class="text-right  text-2xl font-bold mb-12 mt-12" data-aos="fade-right">Animated Invitations</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        <div class="relative video-container overflow-hidden rounded-xl shadow-lg cursor-pointer" data-aos="zoom-in" onclick="openLightbox('assets/videos/invitations/invite-1.mp4', 'video')">
-          <img src="assets/videos/thumbnails/invite-1.png" alt="Animated Invite 1" class="w-full h-[24rem] object-cover">
-          <div class="play-button"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></div>
-        </div>
-        <div class="relative video-container overflow-hidden rounded-xl shadow-lg cursor-pointer" data-aos="zoom-in" onclick="openLightbox('assets/videos/invitations/invite-2.mp4', 'video')">
-          <img src="assets/videos/thumbnails/invite-2.png" alt="Animated Invite 2" class="w-full h-[24rem] object-cover">
-          <div class="play-button"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></div>
-        </div>
-        <div class="relative video-container overflow-hidden rounded-xl shadow-lg cursor-pointer" data-aos="zoom-in" onclick="openLightbox('assets/videos/invitations/invite-2.mp4', 'video')">
-          <img src="assets/videos/thumbnails/invite-2.png" alt="Animated Invite 3" class="w-full h-[24rem] object-cover">
-          <div class="play-button"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></div>
-        </div>
-      </div>
-
-      <!-- Brand Promotions -->
-      <h3 class="text-2xl font-bold mb-12 mt-12" data-aos="fade-right">Brand Promotions</h3>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        <div class="relative video-container overflow-hidden rounded-xl shadow-lg cursor-pointer" data-aos="zoom-in" onclick="openLightbox('assets/videos/promotions/brand-1.mp4', 'video')">
-          <img src="assets/videos/thumbnails/brand-1.png" alt="Brand 1" class="w-full h-[24rem] object-cover">
-          <div class="play-button"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></div>
-        </div>
-        <div class="relative video-container overflow-hidden rounded-xl shadow-lg cursor-pointer" data-aos="zoom-in" onclick="openLightbox('assets/videos/promotions/brand-2.mp4', 'video')">
-          <img src="assets/videos/thumbnails/brand-2.png" alt="Brand 2" class="w-full h-[24rem] object-cover">
-          <div class="play-button"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></div>
-        </div>
-        <div class="relative video-container overflow-hidden rounded-xl shadow-lg cursor-pointer" data-aos="zoom-in" onclick="openLightbox('assets/videos/promotions/brand-3.mp4', 'video')">
-          <img src="assets/videos/thumbnails/brand-3.png" alt="Brand 3" class="w-full h-[24rem] object-cover">
-          <div class="play-button"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></div>
-        </div>
-        <div class="relative video-container overflow-hidden rounded-xl shadow-lg cursor-pointer" data-aos="zoom-in" onclick="openLightbox('assets/videos/promotions/brand-4.mp4', 'video')">
-          <img src="assets/videos/thumbnails/brand-4.png" alt="Brand 4" class="w-full h-[24rem] object-cover">
-          <div class="play-button"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></div>
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <!-- Lightbox Modal -->
-  <div id="lightbox" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center z-[9999] p-4">
-    <button aria-label="Close" class="absolute top-4 right-5 text-white text-3xl" onclick="closeLightbox()">&times;</button>
-    <div id="lightbox-content" class="max-h-[90vh] max-w-[90vw]"></div>
-  </div>
+  <!-- About Section -->
+  <section id="about" class="section about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image" data-aos="fade-right">
+          <img src="assets/images/logo.jpg" alt="Spotlight Ads Team"
+            onerror="this.src='https://via.placeholder.com/600x400?text=Spotlight+Team'">
+        </div>
 
-  <!-- About -->
-  <section id="about" class="py-20 bg-gray-50">
-    <div class="container mx-auto max-w-7xl px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-      <img src="assets/images/logo.jpg" alt="About Spotlight" onerror="this.src='https://via.placeholder.com/800x600?text=Spotlight';" class="w-full h-80 md:h-[28rem] object-cover rounded-2xl shadow-lg" data-aos="fade-right">
-      <div data-aos="fade-left" class="text-left">
-        <h2 class="text-3xl font-bold mb-4">About Us</h2>
-        <p class="mb-6">Spotlight is an advertisement company dedicated to creating impactful visuals—banners, posters, certificates, animated invitations, and video Ads. Our mission is to help brands shine with clean, modern design.</p>
+        <div class="about-content" data-aos="fade-left">
+          <h2>About Spotlight Ads</h2>
+          <p>Spotlight is an advertisement company dedicated to creating impactful visuals—banners, posters,
+            certificates, animated invitations, and video Ads. Our mission is to help brands shine with clean, modern
+            design.</p>
+          <p>With years of experience in the creative industry, we've developed a keen eye for detail and a passion for
+            delivering exceptional results for our clients.</p>
+          <a href="#contact" class="btn">Work With Us</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="py-20">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-6" data-aos="fade-up">Contact Us</h2>
-      <form class="max-w-lg mx-auto space-y-4" data-aos="fade-up" data-aos-delay="100">
-        <input type="text" placeholder="Your Name" class="w-full p-3 border rounded-lg">
-        <input type="email" placeholder="Your Email" class="w-full p-3 border rounded-lg">
-        <textarea placeholder="Your Message" class="w-full p-3 border rounded-lg"></textarea>
-        <button class="px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-700 transition">Send</button>
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+
+      <form class="contact-form" data-aos="fade-up" data-aos-delay="100">
+        <div class="form-group">
+          <input type="text" class="form-input" placeholder="Your Name" required>
+        </div>
+
+        <div class="form-group">
+          <input type="email" class="form-input" placeholder="Your Email" required>
+        </div>
+
+        <div class="form-group">
+          <input type="text" class="form-input" placeholder="Subject">
+        </div>
+
+        <div class="form-group">
+          <textarea class="form-input" placeholder="Your Message" required></textarea>
+        </div>
+
+        <button type="submit" class="btn">Send Message</button>
       </form>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="py-6 text-center bg-gray-900 text-white">
-    <p>&copy; 2025 Spotlight Ads. All Rights Reserved.</p>
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <a href="#" class="logo" style="color: white; margin-bottom: 1.5rem; display: inline-block;">Spotlight Ads</a>
+
+        <div class="social-links">
+          <a href="#" class="social-link">FB</a>
+          <a href="#" class="social-link">IG</a>
+          <a href="#" class="social-link">TW</a>
+          <a href="#" class="social-link">YT</a>
+        </div>
+
+        <p>Ready to bring your vision to life? Contact us today for a free consultation.</p>
+      </div>
+
+      <p class="copyright">© 2025 Spotlight Ads. All Rights Reserved.</p>
+    </div>
   </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close">×</button>
+    <div class="lightbox-content" id="lightbox-content"></div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <div class="back-to-top" id="back-to-top">↑</div>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="assets/js/script.js"></script>
 </body>
+
 </html>
