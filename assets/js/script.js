@@ -1,11 +1,16 @@
+
+/* Fixed script - preserves scroll position when opening lightbox and locks body without jump */
 document.addEventListener("DOMContentLoaded", function () {
   const loader = document.getElementById("loader");
+  let preservedScroll = 0; // will hold scroll position while lightbox is open
 
   // Loader & AOS
   window.addEventListener("load", function () {
     if (loader) loader.style.display = "none";
-    AOS.init({ duration: 800, once: true, offset: 100 });
-    AOS.refresh();
+    if (window.AOS) {
+      AOS.init({ duration: 800, once: true, offset: 100 });
+      AOS.refresh();
+    }
   });
 
   // Mobile menu
@@ -18,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
   document.querySelectorAll(".nav-link").forEach((link) => {
-    link.addEventListener("click", () => {
+    link.addEventListener("click", (e) => {
       if (mobileToggle) mobileToggle.classList.remove("active");
       if (navMenu) navMenu.classList.remove("active");
     });
@@ -26,10 +31,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Header scroll
   const header = document.getElementById("header");
-  if (header)
+  if (header) {
     window.addEventListener("scroll", () => {
       header.classList.toggle("scrolled", window.scrollY > 100);
     });
+  }
 
   // Portfolio filtering
   const filterButtons = document.querySelectorAll(".filter-btn");
@@ -41,14 +47,15 @@ document.addEventListener("DOMContentLoaded", function () {
         this.classList.add("active");
         const filter = this.getAttribute("data-filter");
         portfolioItems.forEach((item) => {
-          item.style.display =
-            filter === "all" || item.dataset.category === filter
-              ? "block"
-              : "none";
-          if (item.style.display === "block") item.classList.add("fade-in");
-          else item.classList.remove("fade-in");
+          if (filter === "all" || item.dataset.category === filter) {
+            item.style.display = "block";
+            item.classList.add("fade-in");
+          } else {
+            item.style.display = "none";
+            item.classList.remove("fade-in");
+          }
         });
-        AOS.refresh();
+        if (window.AOS) AOS.refresh();
       });
     });
   }
@@ -59,8 +66,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const lightboxClose = document.getElementById("lightbox-close");
 
   function openLightbox(item) {
-    const videoSrc = item.getAttribute("data-video-src");
+    // preserve scroll
+    preservedScroll = window.pageYOffset || document.documentElement.scrollTop || 0;
+    document.body.style.top = `-${preservedScroll}px`;
+    document.body.classList.add("no-scroll");
+
+    // clear and insert content
     lightboxContent.innerHTML = "";
+    const videoSrc = item.getAttribute("data-video-src");
     if (videoSrc) {
       const video = document.createElement("video");
       video.className = "lightbox-video";
@@ -80,28 +93,49 @@ document.addEventListener("DOMContentLoaded", function () {
         lightboxContent.appendChild(lightImg);
       }
     }
-    lightbox.classList.add("active");
-    document.body.classList.add("no-scroll"); // add a CSS class instead of inline style
+
+    // show lightbox
+    if (lightbox) lightbox.classList.add("active");
   }
 
   function closeLightbox() {
-    if (lightbox) lightbox.classList.remove("active");
-    document.body.classList.remove("no-scroll");
+    if (!lightbox) return;
+    lightbox.classList.remove("active");
+
+    // pause video if any
     const video = lightboxContent.querySelector(".lightbox-video");
     if (video) video.pause();
+
+    // restore scroll
+    document.body.classList.remove("no-scroll");
+    document.body.style.top = "";
+    if (typeof preservedScroll === "number") {
+      window.scrollTo({ top: preservedScroll, behavior: "instant" });
+    }
   }
 
-  portfolioItems.forEach((item) => {
-    item.addEventListener("click", (e) => {
-      e.preventDefault();
-      openLightbox(item);
+  if (portfolioItems.length) {
+    portfolioItems.forEach((item) => {
+      item.addEventListener("click", (e) => {
+        e.preventDefault();
+        openLightbox(item);
+      });
     });
-  });
-  if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
-  if (lightbox)
+  }
+
+  if (lightboxClose) {
+    // ensure the button doesn't submit anything if inside a form etc
+    lightboxClose.type = "button";
+    lightboxClose.addEventListener("click", closeLightbox);
+  }
+
+  if (lightbox) {
     lightbox.addEventListener("click", (e) => {
+      // click outside content closes lightbox
       if (e.target === lightbox) closeLightbox();
     });
+  }
+
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeLightbox();
   });
@@ -127,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Lazy load images
+  // Lazy load images (transparent placeholder)
   const lazyImages = document.querySelectorAll("img[data-src]");
   if (lazyImages.length) {
     const imgObserver = new IntersectionObserver(
@@ -144,8 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
       { rootMargin: "50px 0px", threshold: 0.1 }
     );
     lazyImages.forEach((img) => {
-      img.src =
-        "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+      img.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
       imgObserver.observe(img);
     });
   }
