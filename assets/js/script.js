@@ -1,43 +1,39 @@
 document.addEventListener("DOMContentLoaded", function () {
   const loader = document.getElementById("loader");
 
-  // ✅ Loader fade out
-  if (loader) {
-    window.addEventListener("load", function () {
-      loader.classList.add("fade-out");
-      setTimeout(() => loader.style.display = "none", 600);
+  // Hide loader & initialize AOS
+  window.addEventListener("load", function () {
+    if (loader) loader.style.display = "none";
+
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100,
     });
 
-    setTimeout(() => {
-      loader.classList.add("fade-out");
-      setTimeout(() => loader.style.display = "none", 600);
-    }, 1200);
-  }
-
-  // ✅ Init AOS
-  AOS.init({
-    duration: 800,
-    once: true,
-    offset: 100,
+    AOS.refresh();
   });
 
-  // ✅ Mobile menu toggle
+  // Mobile Menu Toggle
   const mobileToggle = document.getElementById("mobile-toggle");
   const navMenu = document.getElementById("nav-menu");
+
   if (mobileToggle && navMenu) {
     mobileToggle.addEventListener("click", function () {
       this.classList.toggle("active");
       navMenu.classList.toggle("active");
     });
-    document.querySelectorAll(".nav-link").forEach((link) => {
-      link.addEventListener("click", () => {
-        mobileToggle.classList.remove("active");
-        navMenu.classList.remove("active");
-      });
-    });
   }
 
-  // ✅ Header scroll effect
+  // Close mobile menu when clicking a nav link
+  document.querySelectorAll(".nav-link").forEach((link) => {
+    link.addEventListener("click", () => {
+      if (mobileToggle) mobileToggle.classList.remove("active");
+      if (navMenu) navMenu.classList.remove("active");
+    });
+  });
+
+  // Header scroll effect
   const header = document.getElementById("header");
   if (header) {
     window.addEventListener("scroll", () => {
@@ -45,9 +41,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // ✅ Portfolio filtering
+  // Portfolio filtering
   const filterButtons = document.querySelectorAll(".filter-btn");
   const portfolioItems = document.querySelectorAll(".portfolio-item");
+
   if (filterButtons.length && portfolioItems.length) {
     filterButtons.forEach((button) => {
       button.addEventListener("click", function () {
@@ -55,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
         this.classList.add("active");
 
         const filterValue = this.getAttribute("data-filter");
+
         portfolioItems.forEach((item) => {
           if (filterValue === "all" || item.dataset.category === filterValue) {
             item.style.display = "block";
@@ -70,10 +68,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // ✅ Lightbox
+  // Lightbox functionality
   const lightbox = document.getElementById("lightbox");
   const lightboxContent = document.getElementById("lightbox-content");
   const lightboxClose = document.getElementById("lightbox-close");
+
   if (portfolioItems.length && lightbox && lightboxContent) {
     portfolioItems.forEach((item) => {
       item.addEventListener("click", function () {
@@ -104,6 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function closeLightbox() {
     if (lightbox) lightbox.classList.remove("active");
     document.body.style.overflow = "auto";
+
     const video = document.querySelector(".lightbox-video");
     if (video) video.pause();
   }
@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (e.key === "Escape") closeLightbox();
   });
 
-  // ✅ Back to top
+  // Back to top button
   const backToTop = document.getElementById("back-to-top");
   if (backToTop) {
     window.addEventListener("scroll", () => {
@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // ✅ Contact form
+  // Contact form
   const contactForm = document.querySelector(".contact-form");
   if (contactForm) {
     contactForm.addEventListener("submit", (e) => {
@@ -139,29 +139,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // ✅ Lazy-load portfolio images
-  const lazyImages = document.querySelectorAll(".portfolio-item img");
-  if ("IntersectionObserver" in window) {
-    const imgObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          const dataSrc = img.getAttribute("data-src");
-          if (dataSrc) {
-            img.src = dataSrc;
-            img.removeAttribute("data-src");
+  // Lazy load images with transparent placeholder
+  const lazyImages = document.querySelectorAll("img[data-src]");
+  if (lazyImages.length) {
+    const imgObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src; // Replace with real image
+            img.classList.add("fade-in");
+            observer.unobserve(img);
           }
-          observer.unobserve(img);
-        }
-      });
-    });
+        });
+      },
+      { rootMargin: "50px 0px", threshold: 0.1 }
+    );
 
     lazyImages.forEach((img) => {
-      // Move src → data-src, keep tiny placeholder in src
-      if (img.getAttribute("src")) {
-        img.setAttribute("data-src", img.getAttribute("src"));
-        img.src = "assets/images/placeholder.jpg"; // tiny 1kb placeholder
-      }
+      // set tiny transparent placeholder
+      img.src =
+        "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
       imgObserver.observe(img);
     });
   }
