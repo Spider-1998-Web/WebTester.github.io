@@ -1,10 +1,10 @@
-
-/* Fixed script - preserves scroll position when opening lightbox and locks body without jump */
 document.addEventListener("DOMContentLoaded", function () {
   const loader = document.getElementById("loader");
-  let preservedScroll = 0; // will hold scroll position while lightbox is open
+  let preservedScroll = 0; // for scroll locking on lightbox
 
+  // =====================
   // Loader & AOS
+  // =====================
   window.addEventListener("load", function () {
     if (loader) loader.style.display = "none";
     if (window.AOS) {
@@ -13,7 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  // =====================
   // Mobile menu
+  // =====================
   const mobileToggle = document.getElementById("mobile-toggle");
   const navMenu = document.getElementById("nav-menu");
   if (mobileToggle && navMenu) {
@@ -23,13 +25,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
   document.querySelectorAll(".nav-link").forEach((link) => {
-    link.addEventListener("click", (e) => {
+    link.addEventListener("click", () => {
       if (mobileToggle) mobileToggle.classList.remove("active");
       if (navMenu) navMenu.classList.remove("active");
     });
   });
 
-  // Header scroll
+  // =====================
+  // Header scroll effect
+  // =====================
   const header = document.getElementById("header");
   if (header) {
     window.addEventListener("scroll", () => {
@@ -37,7 +41,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // =====================
   // Portfolio filtering
+  // =====================
   const filterButtons = document.querySelectorAll(".filter-btn");
   const portfolioItems = document.querySelectorAll(".portfolio-item");
   if (filterButtons.length && portfolioItems.length) {
@@ -60,18 +66,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // =====================
   // Lightbox
+  // =====================
   const lightbox = document.getElementById("lightbox");
   const lightboxContent = document.getElementById("lightbox-content");
   const lightboxClose = document.getElementById("lightbox-close");
 
   function openLightbox(item) {
-    // preserve scroll
     preservedScroll = window.pageYOffset || document.documentElement.scrollTop || 0;
     document.body.style.top = `-${preservedScroll}px`;
     document.body.classList.add("no-scroll");
 
-    // clear and insert content
     lightboxContent.innerHTML = "";
     const videoSrc = item.getAttribute("data-video-src");
     if (videoSrc) {
@@ -94,19 +100,14 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    // show lightbox
     if (lightbox) lightbox.classList.add("active");
   }
 
   function closeLightbox() {
     if (!lightbox) return;
     lightbox.classList.remove("active");
-
-    // pause video if any
     const video = lightboxContent.querySelector(".lightbox-video");
     if (video) video.pause();
-
-    // restore scroll
     document.body.classList.remove("no-scroll");
     document.body.style.top = "";
     if (typeof preservedScroll === "number") {
@@ -124,14 +125,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   if (lightboxClose) {
-    // ensure the button doesn't submit anything if inside a form etc
     lightboxClose.type = "button";
     lightboxClose.addEventListener("click", closeLightbox);
   }
 
   if (lightbox) {
     lightbox.addEventListener("click", (e) => {
-      // click outside content closes lightbox
       if (e.target === lightbox) closeLightbox();
     });
   }
@@ -140,7 +139,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if (e.key === "Escape") closeLightbox();
   });
 
-  // Back to top
+  // =====================
+  // Back to top button
+  // =====================
   const backToTop = document.getElementById("back-to-top");
   if (backToTop) {
     window.addEventListener("scroll", () => {
@@ -151,17 +152,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Contact form
+  // =====================
+  // EmailJS Contact Form
+  // =====================
   const contactForm = document.querySelector(".contact-form");
   if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
+    contactForm.addEventListener("submit", function (e) {
       e.preventDefault();
-      alert("Thank you! We will get back to you soon.");
-      contactForm.reset();
+      emailjs.sendForm('service_9846hpm', 'template_y8zvxyq', this)
+        .then(function () {
+          alert("Thank you! We will get back to you soon.");
+          contactForm.reset();
+        }, function (error) {
+          alert("Oops... something went wrong. Try again later.");
+          console.error(error);
+        });
     });
   }
 
-  // Lazy load images (transparent placeholder)
+  // =====================
+  // Lazy load images
+  // =====================
   const lazyImages = document.querySelectorAll("img[data-src]");
   if (lazyImages.length) {
     const imgObserver = new IntersectionObserver(

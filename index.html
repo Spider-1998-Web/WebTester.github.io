@@ -5,35 +5,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Spotlight Ads | Creative Design Solutions</title>
-  <meta name="description" content="Professional advertising designs including banners, posters, certificates, and animated invitations">
+  <meta name="description"
+    content="Professional advertising designs including banners, posters, certificates, and animated invitations">
   <link rel="icon" type="image/x-icon" href="assets/images/logo.jpg">
-  <link rel="stylesheet" href="assets/css/styles.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init({
+        publicKey: "GSWLvFRdtMB9vTsC4",
+      });
+    })();
+  </script>
+
 </head>
+
 <body>
   <!-- Loading Animation -->
   <div class="loader" id="loader"></div>
 
   <!-- Header -->
-<header id="header">
-  <div class="nav-container">
-    <div class="logo">Spotlight Ads</div>
+  <header id="header">
+    <div class="nav-container">
+      <div class="logo">Spotlight Ads</div>
 
-    <ul id="nav-menu" class="nav-menu">
-      <li><a href="#hero" class="nav-link">Home</a></li>
-      <li><a href="#services" class="nav-link">Services</a></li>
-      <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-      <li><a href="#about" class="nav-link">About</a></li>
-      <li><a href="#contact" class="nav-link">Contact</a></li>
-    </ul>
+      <ul id="nav-menu" class="nav-menu">
+        <li><a href="#hero" class="nav-link">Home</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
 
-    <div id="mobile-toggle" class="mobile-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
+      <div id="mobile-toggle" class="mobile-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
   <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="hero-content" data-aos="fade-up">
@@ -99,7 +113,8 @@
       <div class="portfolio-grid">
         <!-- Banners -->
         <div class="portfolio-item" data-category="banners" data-aos="fade-up">
-          <img src="assets/images/banners/banner-4.jpg" alt="Creative Banner Design" class="portfolio-img lazy" loading="lazy">
+          <img src="assets/images/banners/banner-4.jpg" alt="Creative Banner Design" class="portfolio-img lazy"
+            loading="lazy">
           <div class="portfolio-overlay">
             <h3 class="portfolio-title">Event Banner</h3>
             <p class="portfolio-desc">Modern design for a tech conference</p>
@@ -107,7 +122,8 @@
         </div>
 
         <div class="portfolio-item" data-category="banners" data-aos="fade-up" data-aos-delay="100">
-          <img src="assets/images/banners/banner-5.jpg" alt="Promotional Banner" class="portfolio-img lazy" loading="lazy">
+          <img src="assets/images/banners/banner-5.jpg" alt="Promotional Banner" class="portfolio-img lazy"
+            loading="lazy">
           <div class="portfolio-overlay">
             <h3 class="portfolio-title">Promotional Banner</h3>
             <p class="portfolio-desc">Product launch campaign</p>
@@ -115,7 +131,8 @@
         </div>
 
         <div class="portfolio-item" data-category="banners" data-aos="fade-up" data-aos-delay="200">
-          <img src="assets/images/banners/banner-6.jpg" alt="Corporate Banner" class="portfolio-img lazy" loading="lazy">
+          <img src="assets/images/banners/banner-6.jpg" alt="Corporate Banner" class="portfolio-img lazy"
+            loading="lazy">
           <div class="portfolio-overlay">
             <h3 class="portfolio-title">Corporate Banner</h3>
             <p class="portfolio-desc">Brand awareness campaign</p>
@@ -124,7 +141,8 @@
 
         <!-- Posters -->
         <div class="portfolio-item" data-category="posters" data-aos="fade-up" data-aos-delay="100">
-          <img src="assets/images/posters/poster-1.jpg" alt="Music Event Poster" class="portfolio-img lazy" loading="lazy">
+          <img src="assets/images/posters/poster-1.jpg" alt="Music Event Poster" class="portfolio-img lazy"
+            loading="lazy">
           <div class="portfolio-overlay">
             <h3 class="portfolio-title">Music Event</h3>
             <p class="portfolio-desc">Vibrant design for a festival</p>
@@ -132,7 +150,8 @@
         </div>
 
         <div class="portfolio-item" data-category="posters" data-aos="fade-up" data-aos-delay="200">
-          <img src="assets/images/posters/poster-2.jpg" alt="Art Exhibition Poster" class="portfolio-img lazy" loading="lazy">
+          <img src="assets/images/posters/poster-2.jpg" alt="Art Exhibition Poster" class="portfolio-img lazy"
+            loading="lazy">
           <div class="portfolio-overlay">
             <h3 class="portfolio-title">Art Exhibition</h3>
             <p class="portfolio-desc">Elegant design for a gallery show</p>
@@ -149,7 +168,8 @@
 
         <!-- Certificates -->
         <div class="portfolio-item" data-category="certificates" data-aos="fade-up" data-aos-delay="100">
-          <img src="assets/images/certificates/certificate-1.jpg" alt="Achievement Certificate" class="portfolio-img lazy" loading="lazy">
+          <img src="assets/images/certificates/certificate-1.jpg" alt="Achievement Certificate"
+            class="portfolio-img lazy" loading="lazy">
           <div class="portfolio-overlay">
             <h3 class="portfolio-title">Achievement Award</h3>
             <p class="portfolio-desc">Elegant certificate design</p>
@@ -157,7 +177,8 @@
         </div>
 
         <div class="portfolio-item" data-category="certificates" data-aos="fade-up" data-aos-delay="200">
-          <img src="assets/images/certificates/certificate-2.jpg" alt="Completion Certificate" class="portfolio-img lazy" loading="lazy">
+          <img src="assets/images/certificates/certificate-2.jpg" alt="Completion Certificate"
+            class="portfolio-img lazy" loading="lazy">
           <div class="portfolio-overlay">
             <h3 class="portfolio-title">Course Completion</h3>
             <p class="portfolio-desc">Professional certification</p>
@@ -165,7 +186,8 @@
         </div>
 
         <div class="portfolio-item" data-category="certificates" data-aos="fade-up" data-aos-delay="300">
-          <img src="assets/images/certificates/certificate-3.jpg" alt="Recognition Certificate" class="portfolio-img lazy" loading="lazy">
+          <img src="assets/images/certificates/certificate-3.jpg" alt="Recognition Certificate"
+            class="portfolio-img lazy" loading="lazy">
           <div class="portfolio-overlay">
             <h3 class="portfolio-title">Recognition Award</h3>
             <p class="portfolio-desc">Formal recognition design</p>
@@ -175,7 +197,8 @@
         <!-- Animated Invitations -->
         <div class="portfolio-item" data-category="invitations" data-aos="fade-up" data-aos-delay="100"
           data-video-src="assets/videos/invitations/invite-1.mp4">
-          <img src="assets/videos/thumbnails/invite-1.png" alt="Animated Invitation" class="portfolio-img lazy" loading="lazy">
+          <img src="assets/videos/thumbnails/invite-1.png" alt="Animated Invitation" class="portfolio-img lazy"
+            loading="lazy">
           <div class="portfolio-overlay">
             <h3 class="portfolio-title">Wedding Invitation</h3>
             <p class="portfolio-desc">Elegant animated sequence</p>
@@ -185,7 +208,8 @@
 
         <div class="portfolio-item" data-category="invitations" data-aos="fade-up" data-aos-delay="200"
           data-video-src="assets/videos/invitations/invite-2.mp4">
-          <img src="assets/videos/thumbnails/invite-2.png" alt="Birthday Invitation" class="portfolio-img lazy" loading="lazy">
+          <img src="assets/videos/thumbnails/invite-2.png" alt="Birthday Invitation" class="portfolio-img lazy"
+            loading="lazy">
           <div class="portfolio-overlay">
             <h3 class="portfolio-title">Birthday Invitation</h3>
             <p class="portfolio-desc">Fun and festive animation</p>
@@ -196,7 +220,8 @@
         <!-- Brand Promotions -->
         <div class="portfolio-item" data-category="promotions" data-aos="fade-up"
           data-video-src="assets/videos/promotions/brand-1.mp4">
-          <img src="assets/videos/thumbnails/brand-1.png" alt="Brand Promotion Video" class="portfolio-img lazy" loading="lazy">
+          <img src="assets/videos/thumbnails/brand-1.png" alt="Brand Promotion Video" class="portfolio-img lazy"
+            loading="lazy">
           <div class="portfolio-overlay">
             <h3 class="portfolio-title">Product Launch</h3>
             <p class="portfolio-desc">Exciting reveal campaign</p>
@@ -206,7 +231,8 @@
 
         <div class="portfolio-item" data-category="promotions" data-aos="fade-up"
           data-video-src="assets/videos/promotions/brand-2.mp4">
-          <img src="assets/videos/thumbnails/brand-2.png" alt="Brand Story Video" class="portfolio-img lazy" loading="lazy">
+          <img src="assets/videos/thumbnails/brand-2.png" alt="Brand Story Video" class="portfolio-img lazy"
+            loading="lazy">
           <div class="portfolio-overlay">
             <h3 class="portfolio-title">Brand Story</h3>
             <p class="portfolio-desc">Company journey narrative</p>
@@ -216,7 +242,8 @@
 
         <div class="portfolio-item" data-category="promotions" data-aos="fade-up"
           data-video-src="assets/videos/promotions/brand-3.mp4">
-          <img src="assets/videos/thumbnails/brand-3.png" alt="Service Promotion" class="portfolio-img lazy" loading="lazy">
+          <img src="assets/videos/thumbnails/brand-3.png" alt="Service Promotion" class="portfolio-img lazy"
+            loading="lazy">
           <div class="portfolio-overlay">
             <h3 class="portfolio-title">Service Promotion</h3>
             <p class="portfolio-desc">Highlighting key features</p>
@@ -226,7 +253,8 @@
 
         <div class="portfolio-item" data-category="promotions" data-aos="fade-up"
           data-video-src="assets/videos/promotions/brand-4.mp4">
-          <img src="assets/videos/thumbnails/brand-4.png" alt="Brand Awareness" class="portfolio-img lazy" loading="lazy">
+          <img src="assets/videos/thumbnails/brand-4.png" alt="Brand Awareness" class="portfolio-img lazy"
+            loading="lazy">
           <div class="portfolio-overlay">
             <h3 class="portfolio-title">Brand Awareness</h3>
             <p class="portfolio-desc">Building recognition campaign</p>
@@ -266,23 +294,24 @@
 
       <form class="contact-form" data-aos="fade-up" data-aos-delay="100">
         <div class="form-group">
-          <input type="text" class="form-input" placeholder="Your Name" required>
+          <input type="text" name="name" class="form-input" placeholder="Your Name" required>
         </div>
 
         <div class="form-group">
-          <input type="email" class="form-input" placeholder="Your Email" required>
+          <input type="email" name="email" class="form-input" placeholder="Your Email" required>
         </div>
 
         <div class="form-group">
-          <input type="text" class="form-input" placeholder="Subject">
+          <input type="text" name="subject" class="form-input" placeholder="Subject">
         </div>
 
         <div class="form-group">
-          <textarea class="form-input" placeholder="Your Message" required></textarea>
+          <textarea name="message" class="form-input" placeholder="Your Message" required></textarea>
         </div>
 
         <button type="submit" class="btn">Send Message</button>
       </form>
+
     </div>
   </section>
 
@@ -315,7 +344,7 @@
   <!-- Back to Top Button -->
   <div class="back-to-top" id="back-to-top">↑</div>
 
-  <script src="assets/js/script.min.js" defer></script>
+  <script src="assets/js/script.js" defer></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 </body>
 
