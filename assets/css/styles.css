@@ -28,8 +28,6 @@ body {
   height: 100%;
   scroll-behavior: smooth;
   overflow-x: clip;
-
-  
 }
 body {
   font-family: "Inter", sans-serif;
@@ -283,7 +281,6 @@ header.scrolled {
   background: var(--primary);
   color: var(--white);
 }
-
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -526,6 +523,51 @@ textarea.form-input {
 .back-to-top.visible {
   opacity: 1;
   visibility: visible;
+}
+
+/* =====================
+   Footer
+===================== */
+footer {
+  background: var(--primary);
+  color: var(--white);
+  padding: 3rem 1.5rem 1.5rem;
+  text-align: center;
+  position: relative;
+}
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: var(--transition);
+  font-size: 1.2rem;
+}
+.social-link:hover {
+  background: var(--accent);
+  transform: translateY(-3px);
+}
+.copyright {
+  opacity: 0.7;
+  font-size: 0.9rem;
 }
 
 /* =====================
